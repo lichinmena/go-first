@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"strconv"
 
 	"rsc.io/quote"
 )
@@ -29,7 +30,7 @@ const (
 	Sabado
 )
 
-func main() {
+func main2() {
 	fmt.Println("Hola mundo")
 	fmt.Println(quote.Go())
 
@@ -122,5 +123,52 @@ func main() {
 		defaultString string
 	)
 	fmt.Println(defaultInt, defaultUint, defaultFloat, defaultBool, defaultString)
+
+	//20.- Conversiones de tipos
+	var integer16 int16 = 50
+	var integer32 int32 = 100
+
+	fmt.Println(int32(integer16) + integer32)
+
+	//String a tipo entero
+	ss := "100"
+	x1, _ := strconv.Atoi(ss) //Esta funcion devuelve dos valores, la conversion y el error.
+	//el guion bajo representa que no vamos a utilizar el error, por el momento.
+	fmt.Println("String a entero :: ", x1)
+
+	//Entero a cadena
+	n1 := 42
+	ss = strconv.Itoa(n1)
+	fmt.Println("Entero a String :: ", ss)
+
+	//21.- Paquete fmt
+	//Es uno de los mas utilzados
+	fmt.Print("Otro Mensaje")
+
+	fmt.Println()
+
+	name1 := "Luis"
+	age1 := 35
+	fmt.Printf("Hola, me llamo %s y tengo %d años \n", name1, age1)
+
+	gretting := fmt.Sprintf("Hola, me llamo %s y tengo %d años \n", name1, age1)
+	fmt.Println(gretting)
+
+	//Ingresar datos de usuario
+	var name2 string
+	var age2 int
+
+	fmt.Print("Ingrese el valor de name2:")
+	fmt.Scanln(&name2) //Referencia de la memoria
+
+	fmt.Print("Ingrese el valor de age2:")
+	fmt.Scanln(&age2) //Referencia de la memoria
+
+	fmt.Printf("Hola, me llamo %s y tengo %d años \n", name2, age2)
+	//%v -> cuando no sabes el tipo de dato a mostrar
+
+	//Qu2 tipo de dato tiene una variable
+	fmt.Printf("El tipo de dato de name2 es: %T\n", name2)
+	fmt.Printf("El tipo de dato de age2 es: %T\n", age2)
 
 }
