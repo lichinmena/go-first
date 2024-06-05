@@ -1,4 +1,4 @@
-module holamundo
+module inicio
 
 go 1.22.3
 

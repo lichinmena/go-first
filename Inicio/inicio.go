@@ -30,7 +30,7 @@ const (
 	Sabado
 )
 
-func main2() {
+func main() {
 	fmt.Println("Hola mundo")
 	fmt.Println(quote.Go())
 
