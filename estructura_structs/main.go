@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+//
+
 // Creacion
 type Persona struct {
 	nombre string
