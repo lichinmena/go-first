@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/lichinmena/greetings"
 )
@@ -13,6 +14,23 @@ import (
 //go mod tidy
 
 func main() {
-	message := greetings.Hello("Luis")
-	fmt.Println(message)
+
+	log.SetPrefix("greetings: ")
+	log.SetFlags(0) //Establecer de formato en cero. NO se muestra la fecha y la hora
+
+	names := []string{"Alex", "Roel", "Juan"}
+	messages, err := greetings.Hellos(names)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(messages)
+	/*
+		message, err := greetings.Hello("Luis")
+
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		fmt.Println(message)
+	*/
 }
