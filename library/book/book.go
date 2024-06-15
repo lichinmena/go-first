@@ -2,6 +2,14 @@ package book
 
 import "fmt"
 
+type Printable interface {
+	PrintInfo()
+}
+
+func Print(p Printable) {
+	p.PrintInfo()
+}
+
 type Book struct {
 	Title  string
 	Author string
@@ -37,7 +45,7 @@ func (b *Book) SetTitle(title string) {
 */
 
 // Constructor de la composicion
-func NewTexBook(title, author string, pages int, editorial, level string) *TextBook {
+func NewTextBook(title, author string, pages int, editorial, level string) *TextBook {
 	return &TextBook{
 		Book:      Book{title, author, pages},
 		editorial: editorial,
